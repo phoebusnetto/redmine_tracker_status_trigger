@@ -12,11 +12,21 @@ en:
   label_relation: Relação
   label_relation_change_status_from: Situação da relação de
   label_relation_change_status_to: Situação da relação para
+  label_actions: Actions
+  label_relation_tracker: Relation type
+  label_change_settings: Edit settings
+  label_successfully_delete: Setting removed sucessfully
+  label_successfully_create: Setting created sucessfully
+  label_successfully_update: Setting changed sucessfully
+  label_delete_confirmation: Are you sure remove setting?
+  label_trackers_config: Trigger settings for trackers
+  label_new_config: New setting
+  label_edit_config: Edit setting
   
   parent_relation: parent
   relates_relation: relates
   child_relation: child
-  relation_not_found: Relação não encontrada
+  relation_not_found: Relation not found
   
   label_special_permissions: " Special Permissions "
   label_use_specific_user: Use specific user
