@@ -1,0 +1,40 @@
+<%= form_for(@tst) do |f| %>
+  <p>
+    <%= l(:field_tracker) %>
+    <% t = Tracker.new(:name => 'Todos') %>
+    <% t.id = 0 %>
+    <p><%= f.select :tracker_id, options_for_select(Tracker.all.map{ |c| [c.name, c.id] }, :selected => @tst.tracker_id) %> </p>
+  </p>
+
+  <p>
+    <%= label_tag l(:field_status) + " " + l(:label_previous) %>
+    <p><%= f.select :status_id_change_from, options_for_select(IssueStatus.all.map{ |c| [c.name, c.id] }, :selected => @tst.status_id_change_from) %> </p>
+  </p>
+  
+  <p>
+    <%= label_tag l(:label_issue_status_new) %>
+    <p><%= f.select :status_id_change_to, options_for_select(IssueStatus.all.map{ |c| [c.name, c.id] }, :selected => @tst.status_id_change_to) %> </p>
+  </p>
+
+  <p>
+    <%= label_tag l(:label_relation) %>
+    <p><%= f.select :relation, options_for_select([l(:parent_relation), l(:relates_relation), l(:child_relation)], :selected => @tst.relation) %> </p>
+  </p>
+
+  <p>
+    <%= label_tag l(:label_relation_tracker) %>
+    <p><%= f.select :relation_tracker_id, options_for_select(([t] + Tracker.all).map{ |c| [c.name, c.id] }, :selected => @tst.relation_tracker_id) %> </p>
+  </p>
+
+  <p>
+    <%= label_tag l(:label_relation_change_status_from) %>
+    <p><%= f.select :upd_status_id_from, options_for_select(IssueStatus.all.map{ |c| [c.name, c.id] }, :selected => @tst.upd_status_id_from) %> </p>
+  </p>
+
+  <p>
+    <%= label_tag l(:label_relation_change_status_to) %>
+    <p><%= f.select :upd_status_id_to, options_for_select(IssueStatus.all.map{ |c| [c.name, c.id] }, :selected => @tst.upd_status_id_to) %> </p>
+  </p>
+  
+  <%= f.submit %>
+<% end %>

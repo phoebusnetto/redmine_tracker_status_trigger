@@ -1,0 +1,28 @@
+<%- content_for :header_tags do %>
+  <%= javascript_tag render :partial => "settings/tracker_status_trigger", :formats => [:js] %>
+  <%= javascript_tag render :partial => "settings/jquery", :formats => [:js] %>
+  <%= stylesheet_link_tag "tracker_status_trigger.css", :plugin => "redmine_tracker_status_trigger" %>
+<%- end %>
+
+<h2><%= l(:label_plugin_name) %></h2>
+<fieldset>
+  <legend> <%= l(:label_special_permissions) %> </legend>
+  <%= l(:label_info_special_permissions) %>
+
+<p>
+  <%= label_tag 'settings[use_specific_user]', l(:label_use_specific_user) %>
+  <%= check_box_tag('settings[use_specific_user]', "true", @settings["use_specific_user"], class: 'accept_tos') %>
+  <table class="config_div">
+    <tr>
+      <td> <%= l(:field_user) %> </td>
+      <td> <%= text_field_tag('settings[specific_user]', @settings["specific_user"]) %> </td>
+    </tr>
+  </table>
+</p>
+</fieldset>
+</ br>
+<fieldset>
+  <legend> <%= l(:label_settings) %> </legend>
+  <table><%= link_to image_tag('add.png') + l(:label_new_config), :controller => 'tracker_status_trigger_settings', :action => 'new' %></table>
+  <p><%= render :partial => 'tracker_status_trigger_settings/settings_list', :locals => { :can_manage => true } %></p>
+</fieldset>

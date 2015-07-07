@@ -1,0 +1,35 @@
+# Portuguese Brazilian strings go here for Rails i18n
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        msg_parent_issue_not_allow_this_statuts_change: "Usuário não tem permissão para alterar a tarefa pai do tipo '%{type}' da situação '%{old_status}' para '%{new_status}'."
+        msg_related_issue_not_allow_this_status_change: "Usuário não tem permissão para alterar a tarefa %{relation} #%{task} do tipo '%{type}' da situação '%{old_status}' para '%{new_status}'"
+        msg_child_issue_not_allow_this_statuts_change: "Usuário não tem permissão para alterar a subtarefa '%{id}' do tipo '%{type}' da situação '%{old_status}' para '%{new_status}'."
+
+  # my_label: "My label"
+  label_plugin_name: Redmine TrackerStatusTrigger Plugin
+  label_relation: Relação
+  label_relation_change_status_from: Situação da relação de
+  label_relation_change_status_to: Situação da relação para
+  label_actions: Ações
+  label_relation_tracker: Tipo da relação
+  label_change_settings: Alterar configurações
+  label_successfully_delete: Configuração excluída com sucesso
+  label_successfully_create: Configuração criada com sucesso
+  label_successfully_update: Configuração atualizada com sucesso
+  label_delete_confirmation: Tem certeza que deseja excluir esta configuração?
+  label_trackers_config: Configurações de trigger das tarefas
+  label_new_config: Nova configuração
+  label_edit_config: Editar configuração
+  
+  parent_relation: parent
+  relates_relation: relates
+  child_relation: child
+  relation_not_found: Relação não encontrada
+  
+  label_special_permissions: " Permissões especiais "
+  label_use_specific_user: Usar usuário específico
+  label_info_special_permissions: "Em alguns casos as tarefas associadas (tarefa pai ou tarefas associadas) podem estar em outros projetos que o usuário atual não tem permissão para atualizar sua situação. Assim, para evitar erros blocantes é possível configurar um usuário específico para fazer a validação destas atividades relacionadas. Por exemplo, é possível configurar o usuário 'administrador' que tem permissão de validar toda e qualquer situação de qualquer tipo."
+  
+  

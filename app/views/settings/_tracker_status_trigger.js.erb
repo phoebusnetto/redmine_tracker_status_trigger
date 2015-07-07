@@ -1,0 +1,21 @@
+$(document).ready(function () {
+  var evt = event || window.event;
+  $('.accept_tos').change(function () {
+      if (!this.checked) {
+        $('.config_div').addClass('hidden');
+      }
+      else {
+        $('.config_div').removeClass('hidden');
+      }
+    evt.preventDefault();
+    evt.stopPropagation();
+    return false;
+  });
+
+  if ($('.accept_tos').get(0).checked) {
+    $('.config_div').removeClass('hidden');
+  }
+  else {
+    $('.config_div').addClass('hidden');
+  }
+});

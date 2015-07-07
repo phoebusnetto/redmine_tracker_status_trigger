@@ -1,0 +1,23 @@
+# English strings go here for Rails i18n
+en:
+  activerecord:
+    errors:
+      messages:
+        msg_parent_issue_not_allow_this_statuts_change: "User not allowed to change parent task with tracker '%{type}' from status '%{old_status}' to '%{new_status}'."
+        msg_related_issue_not_allow_this_status_change: "User not allowed to change %{relation} task #%{task} with tracker '%{type}' from status '%{old_status}' to '%{new_status}'"
+        msg_child_issue_not_allow_this_statuts_change: "User not allowed to change child task '%{id}' with tracker '%{type}' from status '%{old_status}' to '%{new_status}'."
+
+  # my_label: "My label"
+  label_plugin_name: Redmine TrackerStatusTrigger Plugin
+  label_relation: Relação
+  label_relation_change_status_from: Situação da relação de
+  label_relation_change_status_to: Situação da relação para
+  
+  parent_relation: parent
+  relates_relation: relates
+  child_relation: child
+  relation_not_found: Relação não encontrada
+  
+  label_special_permissions: " Special Permissions "
+  label_use_specific_user: Use specific user
+  label_info_special_permissions: "In some cases the related issues (parent/child task or related tasks) belongs to other projects and the current user have no access to these projects, therefore the user cannot change these issues statuses. To avoid this kind of restriction the plugin can use a Specific User to do these changes. Example, it is possible to configure the 'admin' user, who has all access to change any issue statuses."

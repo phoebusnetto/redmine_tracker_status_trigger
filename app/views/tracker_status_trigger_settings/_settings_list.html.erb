@@ -1,0 +1,43 @@
+<%- content_for :header_tags do %>
+  <%= javascript_tag render :partial => "settings/tracker_status_trigger", :formats => [:js] %>
+  <%= javascript_tag render :partial => "settings/jquery", :formats => [:js] %>
+  <%= stylesheet_link_tag "tracker_status_trigger.css", :plugin => "redmine_tracker_status_trigger" %>
+<%- end %>
+
+<div class="CSSTableGenerator">
+  <table>
+    <tr>
+      <td><%= l(:label_actions) %></td>
+      <td><%= l(:field_tracker) %></td>
+      <td><%= l(:field_status) %> <%= l(:label_previous) %></td>
+      <td><%= l(:label_issue_status_new) %></td>
+      <td><%= l(:label_relation) %></td>
+      <td><%= l(:label_relation_tracker) %></td>
+      <td><%= l(:label_relation_change_status_from) %></td>
+      <td><%= l(:label_relation_change_status_to) %></td>
+    </tr>
+    <% TrackerStatusTriggerSetting.all.each do |tst| %>
+      <tr>
+        <td>
+          <%= link_to image_tag('delete.png'), { controller: "tracker_status_trigger_settings", action: "destroy", id: tst.id}, method: :delete, confirm: l(:label_delete_confirmation) %>
+          <%= link_to image_tag('edit.png'), { controller: "tracker_status_trigger_settings", action: "edit", id: tst.id} %>
+        </td>
+        <td><%= tst.tracker_name %></td> 
+        <td><%= tst.str_change_status_from %></td>
+        <td><%= tst.str_change_status_to %></td>
+        <% if tst.relation == l(:parent_relation).to_s %>
+        <td><%= l(:field_parent_issue) %></td>
+        <% elsif tst.relation == l(:relates_relation) %>
+        <td><%= l(:label_related_issues) %></td>
+        <% elsif tst.relation == l(:child_relation) %>
+        <td><%= l(:label_subtask_plural) %></td>
+        <% else %>
+        <td><%= l(:relation_not_found) %></td>
+        <% end %>
+        <td><%= tst.relation_tracker_name %></td>
+        <td><%= tst.str_upd_status_from %></td>
+        <td><%= tst.str_upd_status_to %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
