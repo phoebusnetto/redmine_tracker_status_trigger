@@ -1,6 +1,6 @@
 class CreateTrackerStatusTriggerSetting < ActiveRecord::Migration
   def change
-    create_table :tracker_status_trigger_setting do |t|
+    create_table :tracker_status_trigger_settings do |t|
       t.integer :tracker_id, :null => false, :default => 0
       t.string  :relation, :null => false, :default => 'relates'
       t.integer :upd_status_id_from, :null => false, :default => 0
@@ -12,6 +12,6 @@ class CreateTrackerStatusTriggerSetting < ActiveRecord::Migration
   end
   
   def down
-    drop_table :tracker_status_trigger_setting
+    drop_table :tracker_status_trigger_settings
   end
 end
