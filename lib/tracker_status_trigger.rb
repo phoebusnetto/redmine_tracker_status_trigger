@@ -255,7 +255,7 @@ module TrackerStatusTrigger
             child_new_status_id = res.upd_status_id_to.to_i
             
             self.children.each do |child|
-              if (result.relation_tracker_id.to_i == 0) or (result.relation_tracker_id.to_i == child.tracker_id.to_i)
+              if (res.relation_tracker_id.to_i == 0) or (res.relation_tracker_id.to_i == child.tracker_id.to_i)
                 update_child_status(child, child_old_status_id, child_new_status_id, res)
               end
             end
