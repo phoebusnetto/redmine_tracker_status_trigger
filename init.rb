@@ -2,7 +2,7 @@ Redmine::Plugin.register :redmine_tracker_status_trigger do
   name 'Redmine Tracker Status Trigger plugin'
   author 'José Cavalcanti de Moura Netto'
   description 'This plugin is used to auto-change issue status depending on the relation of it with it Children/Parents Issues or Related Issues.'
-  version '0.0.3'
+  version '3.1.0'
   url 'http://www.phoebus.com.br'
   author_url 'http://www.phoebus.com.br'
   
